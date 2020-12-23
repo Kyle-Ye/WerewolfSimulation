@@ -1,0 +1,885 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		271CA5AB25696DA000FC0749 /* WerewolfSimulation-watch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 271CA5AA25696DA000FC0749 /* WerewolfSimulation-watch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		271CA5B025696DA200FC0749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CA5AF25696DA200FC0749 /* Assets.xcassets */; };
+		271CA5B725696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 271CA5B625696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		271CA5BC25696DA200FC0749 /* WerewolfSimulationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CA5BB25696DA200FC0749 /* WerewolfSimulationApp.swift */; };
+		271CA5C025696DA200FC0749 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CA5BF25696DA200FC0749 /* NotificationController.swift */; };
+		271CA5C225696DA200FC0749 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CA5C125696DA200FC0749 /* NotificationView.swift */; };
+		271CA5C425696DA200FC0749 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CA5C325696DA200FC0749 /* ComplicationController.swift */; };
+		271CA5C625696DA200FC0749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CA5C525696DA200FC0749 /* Assets.xcassets */; };
+		271CA5C925696DA200FC0749 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271CA5C825696DA200FC0749 /* Preview Assets.xcassets */; };
+		271CA5E225696EBE00FC0749 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1DE932529A94D00C952F1 /* ResultView.swift */; };
+		271CA5E825696ED600FC0749 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271CA5E725696ED600FC0749 /* ResultView.swift */; };
+		271CA5F425696F9900FC0749 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 271CA5F325696F9900FC0749 /* SwiftUICharts */; };
+		27340691256A5A610075FD20 /* PlayerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27340690256A5A610075FD20 /* PlayerCardView.swift */; };
+		275F3DF6256A0E9A0098C114 /* ConfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F3DF5256A0E9A0098C114 /* ConfigureView.swift */; };
+		275F3E0B256A13580098C114 /* RateSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F3E0A256A13580098C114 /* RateSimulation.swift */; };
+		275F3E15256A15C70098C114 /* SingleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F3E14256A15C70098C114 /* SingleGame.swift */; };
+		275F3E1F256A16B10098C114 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F3E1E256A16B10098C114 /* GameView.swift */; };
+		2762835D25761103001E14F0 /* RateSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275F3E0A256A13580098C114 /* RateSimulation.swift */; };
+		276283782576119B001E14F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1DE672529A6EE00C952F1 /* ContentView.swift */; };
+		276283882576122D001E14F0 /* ConfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276283862576122D001E14F0 /* ConfigureView.swift */; };
+		278FC5A4256A1B1C00F77551 /* SingleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278FC5A3256A1B1C00F77551 /* SingleGame.swift */; };
+		278FC5B4256A1BDE00F77551 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278FC5B3256A1BDE00F77551 /* GameView.swift */; };
+		27ABA49325694E5000CF5124 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 27ABA49225694E5000CF5124 /* SwiftUICharts */; };
+		27AEE4EB256A299300D7B73C /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEE4EA256A299300D7B73C /* Stepper.swift */; };
+		27D1DE662529A6EE00C952F1 /* WerewolfSimulationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1DE652529A6EE00C952F1 /* WerewolfSimulationApp.swift */; };
+		27D1DE682529A6EE00C952F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1DE672529A6EE00C952F1 /* ContentView.swift */; };
+		27D1DE6A2529A6EF00C952F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D1DE692529A6EF00C952F1 /* Assets.xcassets */; };
+		27D1DE6D2529A6EF00C952F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D1DE6C2529A6EF00C952F1 /* Preview Assets.xcassets */; };
+		27DE27B025933F5000EC81E7 /* CoreMafia in Frameworks */ = {isa = PBXBuildFile; productRef = 27DE27AF25933F5000EC81E7 /* CoreMafia */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		271CA5AC25696DA000FC0749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27D1DE5A2529A6EE00C952F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 271CA5A925696DA000FC0749;
+			remoteInfo = "WerewolfSimulation-watch WatchKit App";
+		};
+		271CA5B825696DA200FC0749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27D1DE5A2529A6EE00C952F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 271CA5B525696DA200FC0749;
+			remoteInfo = "WerewolfSimulation-watch WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		271CA5CF25696DA200FC0749 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				271CA5B725696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		271CA5D325696DA200FC0749 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				271CA5AB25696DA000FC0749 /* WerewolfSimulation-watch WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		271CA5A325696D6200FC0749 /* WerewolfSimulation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WerewolfSimulation.entitlements; sourceTree = "<group>"; };
+		271CA5A725696D9F00FC0749 /* WerewolfSimulation-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WerewolfSimulation-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		271CA5AA25696DA000FC0749 /* WerewolfSimulation-watch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WerewolfSimulation-watch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		271CA5AF25696DA200FC0749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		271CA5B125696DA200FC0749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		271CA5B625696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WerewolfSimulation-watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		271CA5BB25696DA200FC0749 /* WerewolfSimulationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolfSimulationApp.swift; sourceTree = "<group>"; };
+		271CA5BF25696DA200FC0749 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		271CA5C125696DA200FC0749 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		271CA5C325696DA200FC0749 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		271CA5C525696DA200FC0749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		271CA5C825696DA200FC0749 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		271CA5CA25696DA200FC0749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		271CA5CB25696DA200FC0749 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		271CA5E725696ED600FC0749 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		27340690256A5A610075FD20 /* PlayerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardView.swift; sourceTree = "<group>"; };
+		275F3DF5256A0E9A0098C114 /* ConfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureView.swift; sourceTree = "<group>"; };
+		275F3E0A256A13580098C114 /* RateSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateSimulation.swift; sourceTree = "<group>"; };
+		275F3E14256A15C70098C114 /* SingleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGame.swift; sourceTree = "<group>"; };
+		275F3E1E256A16B10098C114 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		276283862576122D001E14F0 /* ConfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureView.swift; sourceTree = "<group>"; };
+		278FC5A3256A1B1C00F77551 /* SingleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGame.swift; sourceTree = "<group>"; };
+		278FC5B3256A1BDE00F77551 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		27AEE4EA256A299300D7B73C /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
+		27D1DE622529A6EE00C952F1 /* WerewolfSimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WerewolfSimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D1DE652529A6EE00C952F1 /* WerewolfSimulationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolfSimulationApp.swift; sourceTree = "<group>"; };
+		27D1DE672529A6EE00C952F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		27D1DE692529A6EF00C952F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27D1DE6C2529A6EF00C952F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27D1DE6E2529A6EF00C952F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27D1DE932529A94D00C952F1 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		271CA5B325696DA200FC0749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				271CA5F425696F9900FC0749 /* SwiftUICharts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D1DE5F2529A6EE00C952F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27DE27B025933F5000EC81E7 /* CoreMafia in Frameworks */,
+				27ABA49325694E5000CF5124 /* SwiftUICharts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		271CA5AE25696DA000FC0749 /* WerewolfSimulation-watch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				271CA5AF25696DA200FC0749 /* Assets.xcassets */,
+				271CA5B125696DA200FC0749 /* Info.plist */,
+			);
+			path = "WerewolfSimulation-watch WatchKit App";
+			sourceTree = "<group>";
+		};
+		271CA5BA25696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				271CA5BB25696DA200FC0749 /* WerewolfSimulationApp.swift */,
+				278FC592256A1A0B00F77551 /* Views */,
+				271CA5BF25696DA200FC0749 /* NotificationController.swift */,
+				271CA5C125696DA200FC0749 /* NotificationView.swift */,
+				271CA5C325696DA200FC0749 /* ComplicationController.swift */,
+				271CA5C525696DA200FC0749 /* Assets.xcassets */,
+				271CA5CA25696DA200FC0749 /* Info.plist */,
+				271CA5CB25696DA200FC0749 /* PushNotificationPayload.apns */,
+				271CA5C725696DA200FC0749 /* Preview Content */,
+			);
+			path = "WerewolfSimulation-watch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		271CA5C725696DA200FC0749 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				271CA5C825696DA200FC0749 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		27340696256A5A660075FD20 /* PlayerCard */ = {
+			isa = PBXGroup;
+			children = (
+				27340690256A5A610075FD20 /* PlayerCardView.swift */,
+			);
+			path = PlayerCard;
+			sourceTree = "<group>";
+		};
+		275F3DF0256A0E0C0098C114 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				275F3DF5256A0E9A0098C114 /* ConfigureView.swift */,
+				27C34AA225753428000ABB6C /* Simulate */,
+				27C34AA725753439000ABB6C /* Single */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		275F3DFF256A0F640098C114 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		278FC592256A1A0B00F77551 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				278FC5A3256A1B1C00F77551 /* SingleGame.swift */,
+				276283862576122D001E14F0 /* ConfigureView.swift */,
+				271CA5E725696ED600FC0749 /* ResultView.swift */,
+				278FC5B3256A1BDE00F77551 /* GameView.swift */,
+				27AEE4EA256A299300D7B73C /* Stepper.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		27ABA48C25694AFD00CF5124 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		27C34AA225753428000ABB6C /* Simulate */ = {
+			isa = PBXGroup;
+			children = (
+				275F3E0A256A13580098C114 /* RateSimulation.swift */,
+				27D1DE932529A94D00C952F1 /* ResultView.swift */,
+			);
+			path = Simulate;
+			sourceTree = "<group>";
+		};
+		27C34AA725753439000ABB6C /* Single */ = {
+			isa = PBXGroup;
+			children = (
+				275F3E14256A15C70098C114 /* SingleGame.swift */,
+				275F3E1E256A16B10098C114 /* GameView.swift */,
+				27340696256A5A660075FD20 /* PlayerCard */,
+			);
+			path = Single;
+			sourceTree = "<group>";
+		};
+		27D1DE592529A6EE00C952F1 = {
+			isa = PBXGroup;
+			children = (
+				27D1DE642529A6EE00C952F1 /* WerewolfSimulation */,
+				271CA5AE25696DA000FC0749 /* WerewolfSimulation-watch WatchKit App */,
+				271CA5BA25696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension */,
+				27D1DE632529A6EE00C952F1 /* Products */,
+				27ABA48C25694AFD00CF5124 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		27D1DE632529A6EE00C952F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27D1DE622529A6EE00C952F1 /* WerewolfSimulation.app */,
+				271CA5A725696D9F00FC0749 /* WerewolfSimulation-watch.app */,
+				271CA5AA25696DA000FC0749 /* WerewolfSimulation-watch WatchKit App.app */,
+				271CA5B625696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27D1DE642529A6EE00C952F1 /* WerewolfSimulation */ = {
+			isa = PBXGroup;
+			children = (
+				271CA5A325696D6200FC0749 /* WerewolfSimulation.entitlements */,
+				27D1DE652529A6EE00C952F1 /* WerewolfSimulationApp.swift */,
+				27D1DE672529A6EE00C952F1 /* ContentView.swift */,
+				275F3DFF256A0F640098C114 /* Models */,
+				275F3DF0256A0E0C0098C114 /* Views */,
+				27D1DE692529A6EF00C952F1 /* Assets.xcassets */,
+				27D1DE6E2529A6EF00C952F1 /* Info.plist */,
+				27D1DE6B2529A6EF00C952F1 /* Preview Content */,
+			);
+			path = WerewolfSimulation;
+			sourceTree = "<group>";
+		};
+		27D1DE6B2529A6EF00C952F1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				27D1DE6C2529A6EF00C952F1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		271CA5A625696D9F00FC0749 /* WerewolfSimulation-watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 271CA5D425696DA200FC0749 /* Build configuration list for PBXNativeTarget "WerewolfSimulation-watch" */;
+			buildPhases = (
+				271CA5A525696D9F00FC0749 /* Resources */,
+				271CA5D325696DA200FC0749 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				271CA5AD25696DA000FC0749 /* PBXTargetDependency */,
+			);
+			name = "WerewolfSimulation-watch";
+			productName = "WerewolfSimulation-watch";
+			productReference = 271CA5A725696D9F00FC0749 /* WerewolfSimulation-watch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		271CA5A925696DA000FC0749 /* WerewolfSimulation-watch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 271CA5D025696DA200FC0749 /* Build configuration list for PBXNativeTarget "WerewolfSimulation-watch WatchKit App" */;
+			buildPhases = (
+				271CA5A825696DA000FC0749 /* Resources */,
+				271CA5CF25696DA200FC0749 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				271CA5B925696DA200FC0749 /* PBXTargetDependency */,
+			);
+			name = "WerewolfSimulation-watch WatchKit App";
+			productName = "WerewolfSimulation-watch WatchKit App";
+			productReference = 271CA5AA25696DA000FC0749 /* WerewolfSimulation-watch WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		271CA5B525696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 271CA5CC25696DA200FC0749 /* Build configuration list for PBXNativeTarget "WerewolfSimulation-watch WatchKit Extension" */;
+			buildPhases = (
+				271CA5B225696DA200FC0749 /* Sources */,
+				271CA5B325696DA200FC0749 /* Frameworks */,
+				271CA5B425696DA200FC0749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WerewolfSimulation-watch WatchKit Extension";
+			packageProductDependencies = (
+				271CA5F325696F9900FC0749 /* SwiftUICharts */,
+			);
+			productName = "WerewolfSimulation-watch WatchKit Extension";
+			productReference = 271CA5B625696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		27D1DE612529A6EE00C952F1 /* WerewolfSimulation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27D1DE712529A6EF00C952F1 /* Build configuration list for PBXNativeTarget "WerewolfSimulation" */;
+			buildPhases = (
+				27D1DE5E2529A6EE00C952F1 /* Sources */,
+				27D1DE5F2529A6EE00C952F1 /* Frameworks */,
+				27D1DE602529A6EE00C952F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WerewolfSimulation;
+			packageProductDependencies = (
+				27ABA49225694E5000CF5124 /* SwiftUICharts */,
+				27DE27AF25933F5000EC81E7 /* CoreMafia */,
+			);
+			productName = WerewolfSimulation;
+			productReference = 27D1DE622529A6EE00C952F1 /* WerewolfSimulation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27D1DE5A2529A6EE00C952F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					271CA5A625696D9F00FC0749 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+					};
+					271CA5A925696DA000FC0749 = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+					};
+					271CA5B525696DA200FC0749 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					27D1DE612529A6EE00C952F1 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 27D1DE5D2529A6EE00C952F1 /* Build configuration list for PBXProject "WerewolfSimulation" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27D1DE592529A6EE00C952F1;
+			packageReferences = (
+				27ABA49125694E5000CF5124 /* XCRemoteSwiftPackageReference "ChartView" */,
+				27DE27AE25933F5000EC81E7 /* XCRemoteSwiftPackageReference "CoreMafia" */,
+			);
+			productRefGroup = 27D1DE632529A6EE00C952F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27D1DE612529A6EE00C952F1 /* WerewolfSimulation */,
+				271CA5A625696D9F00FC0749 /* WerewolfSimulation-watch */,
+				271CA5A925696DA000FC0749 /* WerewolfSimulation-watch WatchKit App */,
+				271CA5B525696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		271CA5A525696D9F00FC0749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		271CA5A825696DA000FC0749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				271CA5B025696DA200FC0749 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		271CA5B425696DA200FC0749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				271CA5C925696DA200FC0749 /* Preview Assets.xcassets in Resources */,
+				271CA5C625696DA200FC0749 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D1DE602529A6EE00C952F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D1DE6D2529A6EF00C952F1 /* Preview Assets.xcassets in Resources */,
+				27D1DE6A2529A6EF00C952F1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		271CA5B225696DA200FC0749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276283882576122D001E14F0 /* ConfigureView.swift in Sources */,
+				278FC5A4256A1B1C00F77551 /* SingleGame.swift in Sources */,
+				2762835D25761103001E14F0 /* RateSimulation.swift in Sources */,
+				276283782576119B001E14F0 /* ContentView.swift in Sources */,
+				271CA5C025696DA200FC0749 /* NotificationController.swift in Sources */,
+				278FC5B4256A1BDE00F77551 /* GameView.swift in Sources */,
+				271CA5C425696DA200FC0749 /* ComplicationController.swift in Sources */,
+				27AEE4EB256A299300D7B73C /* Stepper.swift in Sources */,
+				271CA5BC25696DA200FC0749 /* WerewolfSimulationApp.swift in Sources */,
+				271CA5C225696DA200FC0749 /* NotificationView.swift in Sources */,
+				271CA5E825696ED600FC0749 /* ResultView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27D1DE5E2529A6EE00C952F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27340691256A5A610075FD20 /* PlayerCardView.swift in Sources */,
+				275F3E0B256A13580098C114 /* RateSimulation.swift in Sources */,
+				27D1DE682529A6EE00C952F1 /* ContentView.swift in Sources */,
+				27D1DE662529A6EE00C952F1 /* WerewolfSimulationApp.swift in Sources */,
+				275F3E15256A15C70098C114 /* SingleGame.swift in Sources */,
+				271CA5E225696EBE00FC0749 /* ResultView.swift in Sources */,
+				275F3E1F256A16B10098C114 /* GameView.swift in Sources */,
+				275F3DF6256A0E9A0098C114 /* ConfigureView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		271CA5AD25696DA000FC0749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 271CA5A925696DA000FC0749 /* WerewolfSimulation-watch WatchKit App */;
+			targetProxy = 271CA5AC25696DA000FC0749 /* PBXContainerItemProxy */;
+		};
+		271CA5B925696DA200FC0749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 271CA5B525696DA200FC0749 /* WerewolfSimulation-watch WatchKit Extension */;
+			targetProxy = 271CA5B825696DA200FC0749 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		271CA5CD25696DA200FC0749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WerewolfSimulation-watch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = VB7MJ8R223;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WerewolfSimulation-watch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.kyle.WerewolfSimulation-watch.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		271CA5CE25696DA200FC0749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WerewolfSimulation-watch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = VB7MJ8R223;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WerewolfSimulation-watch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.kyle.WerewolfSimulation-watch.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		271CA5D125696DA200FC0749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VB7MJ8R223;
+				IBSC_MODULE = WerewolfSimulation_watch_WatchKit_Extension;
+				INFOPLIST_FILE = "WerewolfSimulation-watch WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.kyle.WerewolfSimulation-watch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		271CA5D225696DA200FC0749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VB7MJ8R223;
+				IBSC_MODULE = WerewolfSimulation_watch_WatchKit_Extension;
+				INFOPLIST_FILE = "WerewolfSimulation-watch WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "top.kyle.WerewolfSimulation-watch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		271CA5D525696DA200FC0749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VB7MJ8R223;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "top.kyle.WerewolfSimulation-watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		271CA5D625696DA200FC0749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VB7MJ8R223;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "top.kyle.WerewolfSimulation-watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		27D1DE6F2529A6EF00C952F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		27D1DE702529A6EF00C952F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27D1DE722529A6EF00C952F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WerewolfSimulation/WerewolfSimulation.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WerewolfSimulation/Preview Content\"";
+				DEVELOPMENT_TEAM = VB7MJ8R223;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WerewolfSimulation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.kyle.WerewolfSimulation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27D1DE732529A6EF00C952F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WerewolfSimulation/WerewolfSimulation.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WerewolfSimulation/Preview Content\"";
+				DEVELOPMENT_TEAM = VB7MJ8R223;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WerewolfSimulation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = top.kyle.WerewolfSimulation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		271CA5CC25696DA200FC0749 /* Build configuration list for PBXNativeTarget "WerewolfSimulation-watch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				271CA5CD25696DA200FC0749 /* Debug */,
+				271CA5CE25696DA200FC0749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		271CA5D025696DA200FC0749 /* Build configuration list for PBXNativeTarget "WerewolfSimulation-watch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				271CA5D125696DA200FC0749 /* Debug */,
+				271CA5D225696DA200FC0749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		271CA5D425696DA200FC0749 /* Build configuration list for PBXNativeTarget "WerewolfSimulation-watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				271CA5D525696DA200FC0749 /* Debug */,
+				271CA5D625696DA200FC0749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27D1DE5D2529A6EE00C952F1 /* Build configuration list for PBXProject "WerewolfSimulation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D1DE6F2529A6EF00C952F1 /* Debug */,
+				27D1DE702529A6EF00C952F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27D1DE712529A6EF00C952F1 /* Build configuration list for PBXNativeTarget "WerewolfSimulation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27D1DE722529A6EF00C952F1 /* Debug */,
+				27D1DE732529A6EF00C952F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		27ABA49125694E5000CF5124 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+		27DE27AE25933F5000EC81E7 /* XCRemoteSwiftPackageReference "CoreMafia" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kyle-Ye/CoreMafia.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		271CA5F325696F9900FC0749 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27ABA49125694E5000CF5124 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+		27ABA49225694E5000CF5124 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27ABA49125694E5000CF5124 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+		27DE27AF25933F5000EC81E7 /* CoreMafia */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 27DE27AE25933F5000EC81E7 /* XCRemoteSwiftPackageReference "CoreMafia" */;
+			productName = CoreMafia;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 27D1DE5A2529A6EE00C952F1 /* Project object */;
+}
