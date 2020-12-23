@@ -41,39 +41,41 @@ struct ConfigureView: View {
             Stepper(value: $config.villager, in: 0 ... 20) {
                 Text("Villager: \(config.villager)")
             }
+            Stepper(value: $config.seer, in: 0 ... 20) {
+                Text("Seer: \(config.seer)")
+            }
         }
     }
 
     var info2: some View {
         Group {
-            Toggle("Seer: \(config.seer)", isOn: $config.withSeer)
-
-            Toggle("Witch: \(config.witch)", isOn: $config.withWitch)
+            Stepper(value: $config.hunter, in: 0 ... 20) {
+                Text("Hunter: \(config.hunter)")
+            }
+            Stepper(value: $config.crow, in: 0 ... 20) {
+                Text("Crow: \(config.crow)")
+            }
+            Stepper(value: $config.idiot, in: 0 ... 20) {
+                Text("Idiot: \(config.idiot)")
+            }
         }
     }
 
     var info3: some View {
         Group {
+            Toggle("Witch: \(config.witch)", isOn: $config.withWitch)
             Toggle("Savior: \(config.savior)", isOn: $config.withSavior)
-            Toggle("Hunter: \(config.hunter)", isOn: $config.withHunter)
-        }
-    }
-
-    var info4: some View {
-        Group {
-            Toggle("Crow: \(config.crow)", isOn: $config.withCrow)
-            Toggle("Idiot: \(config.idiot)", isOn: $config.withIdiot)
-        }
-    }
-
-    var info5: some View {
-        Group {
             Toggle("Secretwolf: \(config.secretwolf)", isOn: $config.withSecretwolf)
-            Stepper(value: $total, in: total - config.villager ... total + 1) {
-                Text("Total: \(total)")
-            }
         }
     }
+
+//    var info4: some View {
+//        Group {
+//            Stepper(value: $total, in: total - config.villager ... total + 1) {
+//                Text("Total: \(total)")
+//            }
+//        }
+//    }
 
     var body: some View {
         VStack {
@@ -83,21 +85,15 @@ struct ConfigureView: View {
                     info1.padding()
                     info2.padding()
                     info3.padding()
-                    info4.padding()
-                    info5.padding()
                 }
             case .regular:
                 HStack { info1 }.padding()
                 HStack { info2 }.padding()
                 HStack { info3 }.padding()
-                HStack { info4 }.padding()
-                HStack { info5 }.padding()
             default:
                 HStack { info1 }.padding()
                 HStack { info2 }.padding()
                 HStack { info3 }.padding()
-                HStack { info4 }.padding()
-                HStack { info5 }.padding()
             }
             if hasRound {
                 Stepper(value: $config.round, in: 1000 ... 50000, step: 2000) {
