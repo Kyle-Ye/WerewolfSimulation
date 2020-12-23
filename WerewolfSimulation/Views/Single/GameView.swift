@@ -12,8 +12,8 @@ struct GameView: View {
     // MARK: Body
     @ObservedObject private var game: WerewolfGame
 
-    init(config: GameConfig) {
-        game = WerewolfGame(config: config)
+    init(config: GameConfig,rule: GameRule) {
+        game = WerewolfGame(config: config,rule: rule)
     }
 
     var body: some View {

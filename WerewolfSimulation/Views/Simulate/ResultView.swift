@@ -11,11 +11,15 @@ import SwiftUICharts
 
 struct ResultView: View {
     @Environment(\.presentationMode) private var presentationMode
-    var config:GameConfig
+    private var game: WerewolfGame
+
+    init(config: GameConfig, rule: GameRule) {
+        game = WerewolfGame(config: config, rule: rule)
+    }
 
     @State var winRates: [Double] = []
-    @State var stop:Bool = false
-    
+    @State var stop: Bool = false
+
     var body: some View {
         VStack {
             LineView(data: winRates, title: "The win rates of citizen group", valueSpecifier: "%.5 f")
@@ -23,10 +27,9 @@ struct ResultView: View {
                     DispatchQueue.global().async {
                         var wins = 0
                         for i in 1 ... config.round {
-                            if stop{
+                            if stop {
                                 return
                             }
-                            let game = WerewolfGame(config: config)
                             game.autoplay()
                             if game.result == 1 {
                                 wins += 1
@@ -50,7 +53,7 @@ struct ResultView: View {
             }, label: {
                 Text("Done")
             })
-            .padding()
+                .padding()
         }
         .padding()
     }

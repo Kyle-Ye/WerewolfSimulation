@@ -1,23 +1,19 @@
 //
-//  ConfigureView.swift
+//  ConfigureEditor.swift
 //  WerewolfSimulation
 //
-//  Created by 叶絮雷 on 2020/11/22.
+//  Created by 叶絮雷 on 2020/12/23.
 //
 
 import CoreMafia
 import SwiftUI
 
-struct ConfigureView: View {
-    @ObservedObject var config: GameConfig
+struct ConfigureEditor: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass!
-
+    @ObservedObject var config: GameConfig
     @Binding var total: Int
-    var hasRound: Bool
-
-    init(config: GameConfig, hasRound: Bool = true) {
+    init(config: GameConfig) {
         self.config = config
-        self.hasRound = hasRound
         _total = Binding(get: {
             config.werewolf + config.secretwolf +
                 config.villager + config.seer +
@@ -69,45 +65,33 @@ struct ConfigureView: View {
         }
     }
 
-//    var info4: some View {
-//        Group {
-//            Stepper(value: $total, in: total - config.villager ... total + 1) {
-//                Text("Total: \(total)")
-//            }
-//        }
-//    }
-
     var body: some View {
-        VStack {
+        Form{
             switch horizontalSizeClass {
             case .compact:
-                VStack {
-                    info1.padding()
-                    info2.padding()
-                    info3.padding()
-                }
+                Section { info1.padding() }
+                Section { info2.padding() }
+                Section { info3.padding() }
             case .regular:
-                HStack { info1 }.padding()
-                HStack { info2 }.padding()
-                HStack { info3 }.padding()
+                Section { HStack { info1 }.padding() }
+                Section { HStack { info2 }.padding() }
+                Section { HStack { info3 }.padding() }
             default:
-                HStack { info1 }.padding()
-                HStack { info2 }.padding()
-                HStack { info3 }.padding()
+                Section { info1.padding() }
+                Section { info2.padding() }
+                Section { info3.padding() }
             }
-            if hasRound {
-                Stepper(value: $config.round, in: 1000 ... 50000, step: 2000) {
-                    Text("Round: \(config.round)")
-                }
-                .padding()
+            Stepper(value: $total, in: total - config.villager ... total + 1) {
+                Text("Total: \(total)")
             }
+            .padding()
         }
-        .padding()
+        
     }
 }
 
-struct ConfigureView_Previews: PreviewProvider {
+struct ConfigureEditor_Previews: PreviewProvider {
     static var previews: some View {
-        ConfigureView(config: GameConfig())
+        ConfigureEditor(config: GameConfig())
     }
 }
