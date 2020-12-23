@@ -9,14 +9,13 @@ import CoreMafia
 import SwiftUI
 
 struct SingleGame: View {
-    @StateObject var config = GameConfig()
-    @StateObject var rule = GameRule()
+    @StateObject var mode = Mode()
     @State private var show = false
     var body: some View {
         ScrollView {
-            ModeEditor(config: config, rule: rule, hasRound: false)
+            ModeEditor(mode:mode, hasRound: false)
             NavigationLink(
-                destination: GameView(config: config,rule: rule),
+                destination: GameView(mode: mode),
                 isActive: $show,
                 label: {
                     Button(action: {

@@ -39,6 +39,7 @@
 		27F1626C259365AD00DC7564 /* CheckListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F1626B259365AD00DC7564 /* CheckListView.swift */; };
 		27F1627F25936BEC00DC7564 /* ConfigureEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F1627E25936BEC00DC7564 /* ConfigureEditor.swift */; };
 		27F1628525936BF500DC7564 /* RuleEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F1628425936BF500DC7564 /* RuleEditor.swift */; };
+		27F162A52593818500DC7564 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F162A42593818500DC7564 /* Mode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		27F1626B259365AD00DC7564 /* CheckListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListView.swift; sourceTree = "<group>"; };
 		27F1627E25936BEC00DC7564 /* ConfigureEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureEditor.swift; sourceTree = "<group>"; };
 		27F1628425936BF500DC7564 /* RuleEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleEditor.swift; sourceTree = "<group>"; };
+		27F162A42593818500DC7564 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 		275F3DFF256A0F640098C114 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27F162A42593818500DC7564 /* Mode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 			files = (
 				27340691256A5A610075FD20 /* PlayerCardView.swift in Sources */,
 				27F1628525936BF500DC7564 /* RuleEditor.swift in Sources */,
+				27F162A52593818500DC7564 /* Mode.swift in Sources */,
 				275F3E0B256A13580098C114 /* RateSimulation.swift in Sources */,
 				27D1DE682529A6EE00C952F1 /* ContentView.swift in Sources */,
 				27D1DE662529A6EE00C952F1 /* WerewolfSimulationApp.swift in Sources */,

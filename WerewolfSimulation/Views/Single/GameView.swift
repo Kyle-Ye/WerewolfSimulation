@@ -12,8 +12,8 @@ struct GameView: View {
     // MARK: Body
     @ObservedObject private var game: WerewolfGame
 
-    init(config: GameConfig,rule: GameRule) {
-        game = WerewolfGame(config: config,rule: rule)
+    init(mode:Mode) {
+        game = WerewolfGame(config: mode.config,rule: mode.rule)
     }
 
     var body: some View {
@@ -156,7 +156,7 @@ struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             NavigationLink(
-                destination: GameView(config: GameConfig()),
+                destination: GameView(mode:Mode()),
                 isActive: .constant(true),
                 label: {
                     Text("")

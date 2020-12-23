@@ -12,9 +12,10 @@ import SwiftUICharts
 struct ResultView: View {
     @Environment(\.presentationMode) private var presentationMode
     private var game: WerewolfGame
-
-    init(config: GameConfig, rule: GameRule) {
-        game = WerewolfGame(config: config, rule: rule)
+    private var mode: Mode
+    init(mode:Mode) {
+        self.mode = mode
+        game = WerewolfGame(config: mode.config, rule: mode.rule)
     }
 
     @State var winRates: [Double] = []
@@ -26,7 +27,7 @@ struct ResultView: View {
                 .onAppear {
                     DispatchQueue.global().async {
                         var wins = 0
-                        for i in 1 ... config.round {
+                        for i in 1 ... mode.round {
                             if stop {
                                 return
                             }
@@ -61,6 +62,6 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(config: GameConfig())
+        ResultView(mode: Mode())
     }
 }

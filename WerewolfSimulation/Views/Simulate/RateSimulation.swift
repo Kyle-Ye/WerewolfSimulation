@@ -9,16 +9,15 @@ import CoreMafia
 import SwiftUI
 
 struct RateSimulation: View {
-    @StateObject var config = GameConfig()
-    @StateObject var rule = GameRule()
+    @StateObject var mode = Mode()
     @State private var show = false
     @State private var compare = false
     @State private var check = false
     var body: some View {
         ScrollView {
-            ModeEditor(config: config,rule: rule)
+            ModeEditor(mode: mode)
             NavigationLink(
-                destination: ResultView(config: config),
+                destination: ResultView(mode: mode),
                 isActive: $show,
                 label: {
                     Button(action: {
@@ -54,7 +53,6 @@ struct RateSimulation: View {
 
             HStack {
                 Button(action: {
-                    
                 }, label: {
                     Spacer()
                     Label(

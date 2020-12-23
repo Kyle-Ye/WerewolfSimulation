@@ -9,16 +9,14 @@ import CoreMafia
 import SwiftUI
 
 struct ModeEditor: View {
-    @ObservedObject var config: GameConfig
-    @ObservedObject var rule: GameRule
+    @ObservedObject private var mode:Mode
     @State private var editRule: Bool = false
     @State private var editConfig: Bool = false
 
     var hasRound: Bool
 
-    init(config: GameConfig, rule: GameRule, hasRound: Bool = true) {
-        self.config = config
-        self.rule = rule
+    init(mode:Mode, hasRound: Bool = true) {
+        self.mode = mode
         self.hasRound = hasRound
     }
 
@@ -26,7 +24,7 @@ struct ModeEditor: View {
         VStack {
             HStack {
                 NavigationLink(
-                    destination: ConfigureEditor(config: config)
+                    destination: ConfigureEditor(config: mode.config)
                         .toggleStyle(SwitchToggleStyle(tint: .accentColor)),
                     isActive: $editConfig,
                     label: {
@@ -43,7 +41,7 @@ struct ModeEditor: View {
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                     })
                 NavigationLink(
-                    destination: RuleEditor(rule: rule)
+                    destination: RuleEditor(rule: mode.rule)
                         .toggleStyle(SwitchToggleStyle(tint: .accentColor)),
                     isActive: $editRule,
                     label: {
@@ -61,8 +59,8 @@ struct ModeEditor: View {
                     })
             }
             if hasRound {
-                Stepper(value: $config.round, in: 1000 ... 50000, step: 2000) {
-                    Text("Round: \(config.round)")
+                Stepper(value: $mode.round, in: 1000 ... 50000, step: 2000) {
+                    Text("Round: \(mode.round)")
                 }
                 .padding()
             }
@@ -73,7 +71,7 @@ struct ModeEditor: View {
 
 struct ConfigureView_Previews: PreviewProvider {
     static var previews: some View {
-        ModeEditor(config: GameConfig(), rule: GameRule())
+        ModeEditor(mode: Mode())
     }
 }
 
