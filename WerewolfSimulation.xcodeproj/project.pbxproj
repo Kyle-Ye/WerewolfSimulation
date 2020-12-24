@@ -33,6 +33,7 @@
 		279EABC4259486C00013AECC /* ModeItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279EABC3259486C00013AECC /* ModeItemData.swift */; };
 		27ABA49325694E5000CF5124 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 27ABA49225694E5000CF5124 /* SwiftUICharts */; };
 		27AEE4EB256A299300D7B73C /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEE4EA256A299300D7B73C /* Stepper.swift */; };
+		27BD89702594E55500668D92 /* GraphBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD896F2594E55500668D92 /* GraphBar.swift */; };
 		27C8D79A2594151000D7A943 /* SingleSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8D7992594151000D7A943 /* SingleSimulation.swift */; };
 		27C8D7A4259424CE00D7A943 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8D7A3259424CE00D7A943 /* CompareView.swift */; };
 		27C8D7AE259429BA00D7A943 /* ModeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8D7AD259429BA00D7A943 /* ModeItemView.swift */; };
@@ -116,6 +117,7 @@
 		279EABBD259484000013AECC /* DynamicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicList.swift; sourceTree = "<group>"; };
 		279EABC3259486C00013AECC /* ModeItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeItemData.swift; sourceTree = "<group>"; };
 		27AEE4EA256A299300D7B73C /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
+		27BD896F2594E55500668D92 /* GraphBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphBar.swift; sourceTree = "<group>"; };
 		27C8D7992594151000D7A943 /* SingleSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSimulation.swift; sourceTree = "<group>"; };
 		27C8D7A3259424CE00D7A943 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
 		27C8D7AD259429BA00D7A943 /* ModeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeItemView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				27F1626B259365AD00DC7564 /* CheckListView.swift */,
 				27C8D7AD259429BA00D7A943 /* ModeItemView.swift */,
 				279EABBD259484000013AECC /* DynamicList.swift */,
+				27BD896F2594E55500668D92 /* GraphBar.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				275F3E15256A15C70098C114 /* SingleGame.swift in Sources */,
 				27F1626C259365AD00DC7564 /* CheckListView.swift in Sources */,
 				271CA5E225696EBE00FC0749 /* ResultView.swift in Sources */,
+				27BD89702594E55500668D92 /* GraphBar.swift in Sources */,
 				279EABC4259486C00013AECC /* ModeItemData.swift in Sources */,
 				27C8D79A2594151000D7A943 /* SingleSimulation.swift in Sources */,
 				27F1627F25936BEC00DC7564 /* ConfigureEditor.swift in Sources */,
