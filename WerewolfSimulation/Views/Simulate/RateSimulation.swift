@@ -9,14 +9,18 @@ import CoreMafia
 import SwiftUI
 
 struct RateSimulation: View {
+    @State private var mode: Mode = Mode()
     @State private var modes = [Mode]()
     @State private var check = false
     @State private var compare = false
-    @State private var add = false
     @State private var disabled = false
+    init() {
+        print("Init RateSimulation")
+    }
+
     var body: some View {
         ScrollView {
-            SingleSimulation(modes: $modes, add: $add, disabled: $disabled)
+            SingleSimulation(modes: modes, mode: mode, disabled: $disabled)
             NavigationLink(
                 destination: CompareView(),
                 isActive: $compare,
@@ -34,12 +38,10 @@ struct RateSimulation: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                 })
                 .padding()
-                .onDisappear {
-                    disabled = false
-                }
             HStack {
                 Button(action: {
-                    add = true
+                    modes.append(mode)
+                    mode = Mode()
                     disabled = true
                 }, label: {
                     Spacer()

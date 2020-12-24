@@ -12,7 +12,7 @@ struct CompareView: View {
     @ObservedObject var mode2 = Mode()
     @State var start = false
     var body: some View {
-        VStack {
+        ScrollView {
             ModeEditor(mode: mode1)
             Divider()
             ModeEditor(mode: mode2)

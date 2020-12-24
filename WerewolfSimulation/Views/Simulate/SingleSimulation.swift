@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct SingleSimulation: View {
-    @ObservedObject var mode: Mode = Mode()
+    @ObservedObject var mode: Mode
     @State private var show = false
-    @Binding var modes: [Mode]
-    @Binding var add: Bool
-    @Binding var disabled: Bool
-
-    init(modes: Binding<[Mode]>, add: Binding<Bool>, disabled: Binding<Bool>) {
-        _modes = modes
-        _add = add
+    @Binding private var disabled: Bool
+    private var modes:[Mode]
+    init(modes:[Mode],mode: Mode, disabled: Binding<Bool>) {
+        self.modes = modes
+        _mode = ObservedObject<Mode>.init(initialValue: mode)
         _disabled = disabled
     }
 
     var body: some View {
         VStack {
             ModeEditor(mode: mode)
+                .onAppear{
+                    print("ModeEditor in")
+                }
+                .onDisappear{
+                    print("ModeEditor out")
+                }
             NavigationLink(
                 destination: ResultView(mode: mode),
                 isActive: $show,
@@ -40,13 +44,23 @@ struct SingleSimulation: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                 })
                 .padding()
+                .onAppear{
+                    print("NavigationLink in")
+                }
+                .onDisappear{
+                    print("NavigationLink out")
+                }
         }
-        .onChange(of: add, perform: { value in
-            if add {
-                modes.append(mode)
-                add = false
-            }
-        })
+        .onAppear{
+            print("SingleSimulation in")
+            disabled = modes.contains(mode)
+        }
+        .onDisappear{
+            print("SingleSimulation out")
+        }
+        .onChange(of: mode) { (mode) in
+            print("Change")
+        }
     }
 }
 
