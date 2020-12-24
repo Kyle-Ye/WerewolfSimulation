@@ -72,6 +72,7 @@ struct ConfigureEditor: View {
                 Section { info1.padding() }
                 Section { info2.padding() }
                 Section { info3.padding() }
+                
             case .regular:
                 Section { HStack { info1 }.padding() }
                 Section { HStack { info2 }.padding() }

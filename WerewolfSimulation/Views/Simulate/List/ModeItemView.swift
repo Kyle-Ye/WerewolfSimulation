@@ -52,7 +52,7 @@ struct ModeItemView: DynamicListRow {
                 }
             }
             VStack {
-                Text("Round: \(item.process)/\(item.content.round)")
+                Text("Round: \(item.progress)/\(item.content.round)")
                 Text(item.content.config.description)
                 Text(item.content.rule.description)
             }

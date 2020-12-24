@@ -12,7 +12,6 @@ struct CheckListView: View {
 
     var body: some View {
         DynamicList<ModeItemView>()
-            .navigationBarItems(trailing: EditButton())
     }
 }
 

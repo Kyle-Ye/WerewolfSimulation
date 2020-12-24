@@ -22,36 +22,10 @@ protocol ListDataItem {
 class ListDataProvider<Item: ListDataItem>: ObservableObject {
     init(data: [Item.Content] = []) {
         _data = Published(initialValue: data)
+        for content in data {
+            list.append(Item(content: content))
+        }
     }
-
-//    init(data: Binding<[Item.Content]>) {
-//        self.data = Binding<[Item.Content]>.init(get: {
-//            data.wrappedValue
-//        }, set: { newValue in
-//            let diffs = newValue.difference(from: data.wrappedValue).inferringMoves()
-//            for diff in diffs {
-//                switch diff {
-//                case let .remove(offset, oldElement, associated):
-//                    if let associated = associated {
-//                    } else {
-//                        self.list.remove(at: offset)
-//                    }
-//                    break
-//                case let .insert(offset, newElement, associated):
-//                    if let associated = associated {
-//                        self.list.move(fromOffsets: IndexSet(integer: associated), toOffset: offset)
-//                    } else {
-//                        self.list.insert(Item(content: newElement), at: offset)
-//                    }
-//                    break
-//                }
-//            }
-//            data.wrappedValue = newValue
-//        })
-//        for content in data.wrappedValue {
-//            list.append(Item(content: content))
-//        }
-//    }
 
     @Published var data: [Item.Content] {
         willSet {
@@ -78,6 +52,14 @@ class ListDataProvider<Item: ListDataItem>: ObservableObject {
     private(set) var listID: UUID = UUID()
 
     @Published var list: [Item] = []
+
+    func reset() {
+        list = []
+        listID = UUID()
+        for content in data {
+            list.append(Item(content: content))
+        }
+    }
 }
 
 protocol DynamicListRow: View {
@@ -90,20 +72,29 @@ struct DynamicList<Row: DynamicListRow>: View where Row.Item: Hashable {
     @EnvironmentObject var listProvider: ListDataProvider<Row.Item>
 
     var body: some View {
-        return
-            List {
-                ForEach(listProvider.list, id: \.self) { item in
-                    Row(item: item)
-                        .onAppear {
-                            if !item.dataIsFetched {
-                                item.fetchData()
-                            }
+        List {
+            ForEach(listProvider.list, id: \.self) { item in
+                Row(item: item)
+                    .onAppear {
+                        if !item.dataIsFetched {
+                            item.fetchData()
                         }
-                }
-                .onMove(perform: move)
-                .onDelete(perform: remove)
+                    }
             }
-            .id(self.listProvider.listID)
+            .onMove(perform: move)
+            .onDelete(perform: remove)
+        }
+        .id(self.listProvider.listID)
+        .navigationBarItems(trailing:
+            HStack(spacing: 20) {
+                Button(action: {
+                    listProvider.reset()
+                }, label: {
+                    Image(systemName: "arrow.clockwise.circle")
+                })
+                EditButton()
+            }
+        )
     }
 
     private func move(from source: IndexSet, to destination: Int) {

@@ -10,10 +10,10 @@ import CoreMafia
 import Foundation
 
 struct SlowDataStore {
-    static func getRate(_ mode: Mode) -> AnyPublisher<Bool, Never> {
+    static func getRate(_ mode: Mode, progress: Int) -> AnyPublisher<Bool, Never> {
         let game = WerewolfGame(config: mode.config, rule: mode.rule)
 
-        return (1 ... mode.round).indices.publisher
+        return (1 ... mode.round - progress).indices.publisher
             .subscribe(on: DispatchQueue.global(qos: .background))
             .map { _ in
                 game.autoplay()
@@ -40,23 +40,23 @@ final class ModeItemData: ListDataItem, ObservableObject, Hashable {
     }
 
     var dataIsFetched: Bool {
-        process == content.round
+        progress == content.round
     }
 
     var wins = 0
-    @Published var process: Int = 0
+    @Published var progress: Int = 0
     @Published var rate: Double = 0.0
 
     private var dataPublisher: AnyCancellable?
 
     func fetchData() {
         if !dataIsFetched {
-            dataPublisher = SlowDataStore.getRate(content)
+            dataPublisher = SlowDataStore.getRate(content, progress: progress)
                 .receive(on: DispatchQueue.main)
                 .sink { win in
                     self.wins += win ? 1 : 0
-                    self.process += 1
-                    self.rate = Double(self.wins) / Double(self.process)
+                    self.progress += 1
+                    self.rate = Double(self.wins) / Double(self.progress)
                 }
         }
     }
