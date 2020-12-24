@@ -18,7 +18,8 @@ struct CompareView: View {
             ModeEditor(mode: mode2)
             Divider()
             NavigationLink(
-                destination: CheckListView(modes: [mode1, mode2]),
+                destination: CheckListView()
+                    .environmentObject(ListDataProvider<ModeItemData>(data: [mode1, mode2])),
                 isActive: $start,
                 label: {
                     Button(action: {

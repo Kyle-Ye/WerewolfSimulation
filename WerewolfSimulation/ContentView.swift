@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-
     var body: some View {
         NavigationView {
             TabView {
-                VStack{
+                VStack {
                     RateSimulation()
-
+                        .environmentObject(ListDataProvider<ModeItemData>())
                 }
-                    .tabItem {
-                        Label("Rate Simulation", systemImage: "gamecontroller")
-                    }
+                .tabItem {
+                    Label("Rate Simulation", systemImage: "gamecontroller")
+                }
                 SingleGame()
                     .tabItem {
                         Label("Single Game", systemImage: "ladybug")

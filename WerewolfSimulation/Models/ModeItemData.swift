@@ -25,7 +25,15 @@ struct SlowDataStore {
     }
 }
 
-final class ModeItemData: ListDataItem, ObservableObject {
+final class ModeItemData: ListDataItem, ObservableObject, Hashable {
+    static func == (lhs: ModeItemData, rhs: ModeItemData) -> Bool {
+        lhs.content == rhs.content
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(content)
+    }
+
     var content: Mode
     init(content: Mode) {
         self.content = content

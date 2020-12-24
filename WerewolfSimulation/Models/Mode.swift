@@ -86,3 +86,56 @@ extension GameRule: Hashable {
         hasher.combine(witchPoison)
     }
 }
+
+extension Mode {
+    func copy() -> Mode {
+        let newMode = Mode()
+        newMode.round = round
+        newMode.config = config.copy()
+        newMode.rule = rule.copy()
+        return newMode
+    }
+}
+
+extension GameConfig {
+    func copy() -> GameConfig {
+        let newConfig = GameConfig()
+        newConfig.werewolf = werewolf
+        newConfig.villager = villager
+        newConfig.seer = seer
+        newConfig.hunter = hunter
+        newConfig.crow = crow
+        newConfig.idiot = idiot
+        newConfig.withWitch = withWitch
+        newConfig.withSavior = withSavior
+        newConfig.withSecretwolf = withSecretwolf
+        return newConfig
+    }
+}
+
+extension GameRule {
+    func copy() -> GameRule {
+        let newRule = GameRule()
+        newRule.willSpecialClaim = willSpecialClaim
+        newRule.willSeerWhiteListClaim = willSeerWhiteListClaim
+        newRule.willSaviorWhiteListClaim = willSaviorWhiteListClaim
+        newRule.willWitchWhiteListClaim = willWitchWhiteListClaim
+        newRule.saviorRule = saviorRule
+        newRule.witchAntidote = witchAntidote
+        newRule.witchPoison = witchPoison
+        return newRule
+    }
+}
+
+
+extension GameConfig: CustomStringConvertible {
+    public var description: String {
+        "(\(werewolf),\(villager),\(seer),\(hunter),\(crow),\(idiot),\(withWitch),\(withSavior),\(withSecretwolf))"
+    }
+}
+
+extension GameRule: CustomStringConvertible {
+    public var description: String {
+        "(\(willSpecialClaim),\(willSeerWhiteListClaim),\(willSaviorWhiteListClaim),\(willWitchWhiteListClaim),\(saviorRule),\(witchAntidote),\(witchPoison))"
+    }
+}

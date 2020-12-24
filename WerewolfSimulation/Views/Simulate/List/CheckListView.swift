@@ -8,22 +8,17 @@
 import SwiftUI
 
 struct CheckListView: View {
-    @State var modes: [Mode]
-    var listProvider: ListDataProvider<ModeItemData>
-
-    init(modes: [Mode]) {
-        _modes = State<[Mode]>(initialValue: modes)
-        listProvider = ListDataProvider<ModeItemData>(data: modes, itemBatchCount: 20, prefetchMargin: 3)
-    }
+    @EnvironmentObject var listProvider: ListDataProvider<ModeItemData>
 
     var body: some View {
-        DynamicList<ModeItemView>(listProvider: listProvider)
-        .navigationBarItems(trailing: EditButton())
+        DynamicList<ModeItemView>()
+            .navigationBarItems(trailing: EditButton())
     }
 }
 
 struct CheckListView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckListView(modes: [])
+        CheckListView()
+            .environmentObject(ListDataProvider<ModeItemData>())
     }
 }

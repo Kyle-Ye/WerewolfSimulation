@@ -21,14 +21,14 @@ struct ModeItemView: DynamicListRow {
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
         formatter.minimumIntegerDigits = 1
-        formatter.maximumIntegerDigits = 2
+        formatter.maximumIntegerDigits = 3
         formatter.maximumFractionDigits = 2
         return formatter
     }
 
     @State private var stop = false
     @State var index = 0
-    @State var winRates: Float = 0.0
+
     var body: some View {
         HStack {
             VStack {
@@ -53,7 +53,8 @@ struct ModeItemView: DynamicListRow {
             }
             VStack {
                 Text("Round: \(item.process)/\(item.content.round)")
-                Text(item.content.hashValue.description)
+                Text(item.content.config.description)
+                Text(item.content.rule.description)
             }
         }
         .onReceive(self.item.$rate) { rate in

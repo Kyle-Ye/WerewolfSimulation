@@ -74,9 +74,3 @@ struct ConfigureView_Previews: PreviewProvider {
         ModeEditor(mode: Mode())
     }
 }
-
-extension GameConfig: CustomStringConvertible {
-    public var description: String {
-        "(\(werewolf),\(villager),\(seer)"
-    }
-}

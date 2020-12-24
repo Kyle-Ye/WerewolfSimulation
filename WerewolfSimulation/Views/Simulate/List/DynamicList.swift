@@ -9,7 +9,7 @@ import SwiftUI
 
 protocol ListDataItem {
     /// Fetch additional data of the item, possibly asynchronously
-    associatedtype Content
+    associatedtype Content: Hashable
     init(content: Content)
     var content: Content { get set }
 
@@ -20,43 +20,64 @@ protocol ListDataItem {
 }
 
 class ListDataProvider<Item: ListDataItem>: ObservableObject {
-    /// - Parameters:
-    ///   - itemBatchCount: Number of items to fetch in each batch. It is recommended to be greater than number of rows displayed.
-    ///   - prefetchMargin: How far in advance should the next batch be fetched? Greater number means more eager.
-    ///                     Sholuld be less than temBatchSize.
-    init(data: [Item.Content], itemBatchCount: Int = 20, prefetchMargin: Int = 3) {
-        self.data = data
-        itemBatchSize = itemBatchCount
-        self.prefetchMargin = prefetchMargin
-        reset()
+    init(data: [Item.Content] = []) {
+        _data = Published(initialValue: data)
     }
 
-    private let data: [Item.Content]
-    private let itemBatchSize: Int
-    private let prefetchMargin: Int
+//    init(data: Binding<[Item.Content]>) {
+//        self.data = Binding<[Item.Content]>.init(get: {
+//            data.wrappedValue
+//        }, set: { newValue in
+//            let diffs = newValue.difference(from: data.wrappedValue).inferringMoves()
+//            for diff in diffs {
+//                switch diff {
+//                case let .remove(offset, oldElement, associated):
+//                    if let associated = associated {
+//                    } else {
+//                        self.list.remove(at: offset)
+//                    }
+//                    break
+//                case let .insert(offset, newElement, associated):
+//                    if let associated = associated {
+//                        self.list.move(fromOffsets: IndexSet(integer: associated), toOffset: offset)
+//                    } else {
+//                        self.list.insert(Item(content: newElement), at: offset)
+//                    }
+//                    break
+//                }
+//            }
+//            data.wrappedValue = newValue
+//        })
+//        for content in data.wrappedValue {
+//            list.append(Item(content: content))
+//        }
+//    }
 
-    private(set) var listID: UUID = UUID()
-
-    func reset() {
-        list = []
-        listID = UUID()
-        fetchMoreItemsIfNeeded(currentIndex: -1)
-    }
-
-    @Published var list: [Item] = []
-
-    /// Extend the list if we are close to the end, based on the specified index
-    func fetchMoreItemsIfNeeded(currentIndex: Int) {
-        guard currentIndex >= list.count - prefetchMargin else { return }
-        let startIndex = list.count
-        for currentIndex in startIndex ..< max(startIndex + itemBatchSize, currentIndex) {
-            if data.count > currentIndex {
-                let content = data[currentIndex]
-                list.append(Item(content: content))
-                list[currentIndex].fetchData()
+    @Published var data: [Item.Content] {
+        willSet {
+            let diffs = newValue.difference(from: data).inferringMoves()
+            for diff in diffs {
+                switch diff {
+                case let .remove(offset, _, associated):
+                    if associated == nil {
+                        list.remove(at: offset)
+                    }
+                    break
+                case let .insert(offset, newElement, associated):
+                    if let associated = associated {
+                        list.move(fromOffsets: IndexSet(integer: associated), toOffset: offset)
+                    } else {
+                        list.insert(Item(content: newElement), at: offset)
+                    }
+                    break
+                }
             }
         }
     }
+
+    private(set) var listID: UUID = UUID()
+
+    @Published var list: [Item] = []
 }
 
 protocol DynamicListRow: View {
@@ -65,15 +86,18 @@ protocol DynamicListRow: View {
     init(item: Item)
 }
 
-struct DynamicList<Row: DynamicListRow>: View {
-    @ObservedObject var listProvider: ListDataProvider<Row.Item>
+struct DynamicList<Row: DynamicListRow>: View where Row.Item: Hashable {
+    @EnvironmentObject var listProvider: ListDataProvider<Row.Item>
+
     var body: some View {
         return
             List {
-                ForEach(0 ..< listProvider.list.count, id: \.self) { index in
-                    Row(item: self.listProvider.list[index])
+                ForEach(listProvider.list, id: \.self) { item in
+                    Row(item: item)
                         .onAppear {
-                            self.listProvider.fetchMoreItemsIfNeeded(currentIndex: index)
+                            if !item.dataIsFetched {
+                                item.fetchData()
+                            }
                         }
                 }
                 .onMove(perform: move)
@@ -83,10 +107,10 @@ struct DynamicList<Row: DynamicListRow>: View {
     }
 
     private func move(from source: IndexSet, to destination: Int) {
-        listProvider.list.move(fromOffsets: source, toOffset: destination)
+        listProvider.data.move(fromOffsets: source, toOffset: destination)
     }
 
     private func remove(at offsets: IndexSet) {
-        listProvider.list.remove(atOffsets: offsets)
+        listProvider.data.remove(atOffsets: offsets)
     }
 }

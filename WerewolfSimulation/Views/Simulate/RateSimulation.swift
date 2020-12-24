@@ -9,18 +9,22 @@ import CoreMafia
 import SwiftUI
 
 struct RateSimulation: View {
-    @State private var mode: Mode = Mode()
-    @State private var modes = [Mode]()
+    @EnvironmentObject var listProvider: ListDataProvider<ModeItemData>
+
+    @ObservedObject private var mode: Mode = Mode()
+    private var modes: [Mode] {
+        listProvider.data
+    }
+
     @State private var check = false
     @State private var compare = false
-    @State private var disabled = false
-    init() {
-        print("Init RateSimulation")
+    private var disabled: Bool {
+        modes.contains(mode)
     }
 
     var body: some View {
         ScrollView {
-            SingleSimulation(modes: modes, mode: mode, disabled: $disabled)
+            SingleSimulation(mode: mode)
             NavigationLink(
                 destination: CompareView(),
                 isActive: $compare,
@@ -40,9 +44,7 @@ struct RateSimulation: View {
                 .padding()
             HStack {
                 Button(action: {
-                    modes.append(mode)
-                    mode = Mode()
-                    disabled = true
+                    listProvider.data.append(mode.copy())
                 }, label: {
                     Spacer()
                     Label(
@@ -59,7 +61,8 @@ struct RateSimulation: View {
                     .disabled(disabled)
 
                 NavigationLink(
-                    destination: CheckListView(modes: modes),
+                    destination: CheckListView()
+                        .environmentObject(listProvider),
                     isActive: $check,
                     label: {
                         Button(action: {
