@@ -32,6 +32,8 @@
 		27ABA49325694E5000CF5124 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 27ABA49225694E5000CF5124 /* SwiftUICharts */; };
 		27AEE4EB256A299300D7B73C /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AEE4EA256A299300D7B73C /* Stepper.swift */; };
 		27C8D79A2594151000D7A943 /* SingleSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8D7992594151000D7A943 /* SingleSimulation.swift */; };
+		27C8D7A4259424CE00D7A943 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8D7A3259424CE00D7A943 /* CompareView.swift */; };
+		27C8D7AE259429BA00D7A943 /* ModeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8D7AD259429BA00D7A943 /* ModeItemView.swift */; };
 		27D1DE662529A6EE00C952F1 /* WerewolfSimulationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1DE652529A6EE00C952F1 /* WerewolfSimulationApp.swift */; };
 		27D1DE682529A6EE00C952F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D1DE672529A6EE00C952F1 /* ContentView.swift */; };
 		27D1DE6A2529A6EF00C952F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27D1DE692529A6EF00C952F1 /* Assets.xcassets */; };
@@ -111,6 +113,8 @@
 		278FC5B3256A1BDE00F77551 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		27AEE4EA256A299300D7B73C /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
 		27C8D7992594151000D7A943 /* SingleSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSimulation.swift; sourceTree = "<group>"; };
+		27C8D7A3259424CE00D7A943 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		27C8D7AD259429BA00D7A943 /* ModeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeItemView.swift; sourceTree = "<group>"; };
 		27D1DE622529A6EE00C952F1 /* WerewolfSimulation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WerewolfSimulation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27D1DE652529A6EE00C952F1 /* WerewolfSimulationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerewolfSimulationApp.swift; sourceTree = "<group>"; };
 		27D1DE672529A6EE00C952F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -229,7 +233,9 @@
 				275F3E0A256A13580098C114 /* RateSimulation.swift */,
 				27C8D7992594151000D7A943 /* SingleSimulation.swift */,
 				27D1DE932529A94D00C952F1 /* ResultView.swift */,
+				27C8D7A3259424CE00D7A943 /* CompareView.swift */,
 				27F1626B259365AD00DC7564 /* CheckListView.swift */,
+				27C8D7AD259429BA00D7A943 /* ModeItemView.swift */,
 			);
 			path = Simulate;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 				27340691256A5A610075FD20 /* PlayerCardView.swift in Sources */,
 				27F1628525936BF500DC7564 /* RuleEditor.swift in Sources */,
 				27F162A52593818500DC7564 /* Mode.swift in Sources */,
+				27C8D7AE259429BA00D7A943 /* ModeItemView.swift in Sources */,
 				275F3E0B256A13580098C114 /* RateSimulation.swift in Sources */,
 				27D1DE682529A6EE00C952F1 /* ContentView.swift in Sources */,
 				27D1DE662529A6EE00C952F1 /* WerewolfSimulationApp.swift in Sources */,
@@ -498,6 +505,7 @@
 				27C8D79A2594151000D7A943 /* SingleSimulation.swift in Sources */,
 				27F1627F25936BEC00DC7564 /* ConfigureEditor.swift in Sources */,
 				275F3E1F256A16B10098C114 /* GameView.swift in Sources */,
+				27C8D7A4259424CE00D7A943 /* CompareView.swift in Sources */,
 				275F3DF6256A0E9A0098C114 /* ModeEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

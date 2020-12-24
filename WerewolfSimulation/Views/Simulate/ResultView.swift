@@ -35,13 +35,11 @@ struct ResultView: View {
                             if game.result == 1 {
                                 wins += 1
                             }
+                            game.replay()
                             if i & 20 == 0 {
                                 let rate = Double(wins) / Double(i)
                                 DispatchQueue.main.async {
                                     winRates.append(rate)
-                                    //                                if winRates.count > 50{
-                                    //                                    winRates.removeFirst()
-                                    //                                }
                                 }
                             }
                         }

@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct CheckListView: View {
+    @State var modes: [Mode]
     var body: some View {
-        TabView {
-            Text("Tab Content 1").tabItem { /*@START_MENU_TOKEN@*/Text("Tab Label 1")/*@END_MENU_TOKEN@*/ }.tag(1)
-            Text("Tab Content 2").tabItem { /*@START_MENU_TOKEN@*/Text("Tab Label 2")/*@END_MENU_TOKEN@*/ }.tag(2)
+        List {
+            ForEach(modes, id: \.self) { mode in
+                ModeItemView(mode: mode)
+            }
+            .onMove(perform: move)
+            .onDelete(perform: remove)
         }
-        .tabViewStyle(PageTabViewStyle())
+        .navigationBarItems(trailing: EditButton())
+    }
+    private func move(from source: IndexSet, to destination: Int) {
+        modes.move(fromOffsets: source, toOffset: destination)
+    }
+    private func remove(at offsets:IndexSet){
+        modes.remove(atOffsets: offsets)
     }
 }
 
 struct CheckListView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckListView()
+        CheckListView(modes: [])
     }
 }

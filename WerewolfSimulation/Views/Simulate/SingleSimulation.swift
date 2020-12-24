@@ -10,7 +10,6 @@ import SwiftUI
 struct SingleSimulation: View {
     @ObservedObject var mode: Mode = Mode()
     @State private var show = false
-    @State private var compare = false
     @Binding var modes: [Mode]
     @Binding var add: Bool
     @Binding var disabled: Bool
@@ -41,26 +40,6 @@ struct SingleSimulation: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                 })
                 .padding()
-            NavigationLink(
-                destination: Text("Unimplemented"),
-                isActive: $compare,
-                label: {
-                    Button(action: {
-                        compare.toggle()
-                    }, label: {
-                        Spacer()
-                        Text("Compare 2 Modes")
-                        Spacer()
-                    })
-                        .padding()
-                        .foregroundColor(.primary)
-                        .background(Color.accentColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                })
-                .padding()
-                .onDisappear{
-                    disabled = false
-                }
         }
         .onChange(of: add, perform: { value in
             if add {

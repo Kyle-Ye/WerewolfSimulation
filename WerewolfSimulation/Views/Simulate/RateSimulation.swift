@@ -11,11 +11,32 @@ import SwiftUI
 struct RateSimulation: View {
     @State private var modes = [Mode]()
     @State private var check = false
+    @State private var compare = false
     @State private var add = false
     @State private var disabled = false
     var body: some View {
         ScrollView {
             SingleSimulation(modes: $modes, add: $add, disabled: $disabled)
+            NavigationLink(
+                destination: CompareView(),
+                isActive: $compare,
+                label: {
+                    Button(action: {
+                        compare.toggle()
+                    }, label: {
+                        Spacer()
+                        Text("Compare 2 Modes")
+                        Spacer()
+                    })
+                        .padding()
+                        .foregroundColor(.primary)
+                        .background(Color.accentColor)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                })
+                .padding()
+                .onDisappear {
+                    disabled = false
+                }
             HStack {
                 Button(action: {
                     add = true
@@ -36,7 +57,7 @@ struct RateSimulation: View {
                     .disabled(disabled)
 
                 NavigationLink(
-                    destination: CheckListView(),
+                    destination: CheckListView(modes: modes),
                     isActive: $check,
                     label: {
                         Button(action: {
