@@ -9,50 +9,17 @@ import CoreMafia
 import SwiftUI
 
 struct RateSimulation: View {
-    @StateObject var mode = Mode()
-    @State private var show = false
-    @State private var compare = false
+    @State private var modes = [Mode]()
     @State private var check = false
+    @State private var add = false
+    @State private var disabled = false
     var body: some View {
         ScrollView {
-            ModeEditor(mode: mode)
-            NavigationLink(
-                destination: ResultView(mode: mode),
-                isActive: $show,
-                label: {
-                    Button(action: {
-                        show.toggle()
-                    }, label: {
-                        Spacer()
-                        Text("Start Simulation")
-                        Spacer()
-                    })
-                        .padding()
-                        .foregroundColor(.primary)
-                        .background(Color.accentColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                })
-                .padding()
-            NavigationLink(
-                destination: Text("Unimplemented"),
-                isActive: $compare,
-                label: {
-                    Button(action: {
-                        compare.toggle()
-                    }, label: {
-                        Spacer()
-                        Text("Compare 2 Modes")
-                        Spacer()
-                    })
-                        .padding()
-                        .foregroundColor(.primary)
-                        .background(Color.accentColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                })
-                .padding()
-
+            SingleSimulation(modes: $modes, add: $add, disabled: $disabled)
             HStack {
                 Button(action: {
+                    add = true
+                    disabled = true
                 }, label: {
                     Spacer()
                     Label(
@@ -66,6 +33,7 @@ struct RateSimulation: View {
                     .background(Color.accentColor)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .padding()
+                    .disabled(disabled)
 
                 NavigationLink(
                     destination: CheckListView(),
@@ -75,7 +43,7 @@ struct RateSimulation: View {
                             check.toggle()
                         }, label: {
                             Spacer()
-                            Text("Check")
+                            Text("Check" + (modes.isEmpty ? "" : " \(modes.count) modes"))
                             Spacer()
                         })
                             .padding()
@@ -92,8 +60,6 @@ struct RateSimulation: View {
 struct RateSimulation_Previews: PreviewProvider {
     static var previews: some View {
         RateSimulation()
-            .accentColor(.orange)
-//            .preferredColorScheme(.dark)
     }
 }
 

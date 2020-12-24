@@ -25,4 +25,5 @@ class Mode:ObservableObject {
             self?.objectWillChange.send()
         }
     }
+
 }
